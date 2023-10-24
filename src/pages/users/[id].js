@@ -29,12 +29,12 @@ return{
 
 const Details = ({users}) => {
     return(
-        <div className={styles.description}>
+        <div className={styles.photocontainer}>
             <h1>{users.name}</h1>
-            <p>{users.username}</p>
-            <p>{users.email}</p>
-            <p>{users.address.city}</p>
-            <p>{users.website}</p>
+            <p className={styles.users}>Username: {users.username}</p>
+            <p className={styles.users}>Email: {users.email}</p>
+            <p className={styles.users}>Adress: {users.address.city}</p>
+            <p className={styles.users}>Website: {users.website}</p>
          
         </div>
     )

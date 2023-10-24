@@ -1,4 +1,4 @@
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Users.module.css'
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/photos')
@@ -8,33 +8,35 @@ export const getStaticPaths = async () => {
         return{
             params: {id: photos.id.toString()}
         }
+
     })
-    
+
     return{
         paths,
         fallback: false
     }
 }
 
-//for each page
+//for each page dynamic routes
 export const getStaticProps = async (context) => {
     const id = context.params.id
-    const res = await fetch('https://jsonplaceholder.typicode.com/photos' + id)
+    const res = await fetch('https://jsonplaceholder.typicode.com/photos/' + id)
     const data = await res.json()
 
 
 return{
     props: { photo: data}
-}
-}
+};
+};
 
 const Detail = ({photo}) => {
     return(
-        <div className={styles.description}>
-            <p>{photo.title}</p>
+        <div className={styles.photocontainer}>
+            <h1>{photo.title}</h1>
             <img src={photo.url} alt={photo.title} />        
             </div>
-    )
-}
+         
+    );
+};
 
 export default Detail;

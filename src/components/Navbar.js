@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import Image from 'next/image'
+
 
 const Navbar = () => {
   return (
     <nav >
      <div className='logo'>
-    <Image src="/next-js.png" as='image' alt='logo' width={168} height={95} priority />
+    <img rel="preload" src="/LOGOnext-js.png" as='image' alt='logo' width={168} height={155}  />
   </div>
 
 

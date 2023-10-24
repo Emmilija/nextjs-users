@@ -1,6 +1,6 @@
 import Link from "next/link"
 import styles from '../styles/Home.module.css'
-import { useEffect, useReducer } from "react"
+import { useEffect } from "react"
 import { useRouter } from "next/router"
 
 const NotFound = () => {
