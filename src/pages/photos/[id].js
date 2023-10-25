@@ -33,13 +33,17 @@ return{
 };
 
 const Detail = ({photo}) => {
+    if (!photo || !photo.title) {
+      
+        return <div>Error: Photo not found.</div>;
+      }
     return(
         <div className={styles.photocontainer}>
-                    <button  className={styles.button}>
+                    <p  className={styles.button}>
 <Link href={'/photos'}>Go Back</Link>
-            </button>
+            </p>
             <h1>{photo.title}</h1>
-            <img src={photo.url} alt={photo.title} />        
+            <img className={styles.photo} src={photo.url} alt={photo.title} />        
             </div>
          
     );
