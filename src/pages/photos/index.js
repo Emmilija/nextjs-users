@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import styles from  '@/styles/Users.module.css'
 
 
@@ -16,6 +17,13 @@ export const getStaticProps = async () => {
 //taking the photo from the data like a prop
 export default function Photos({ photo }) {
   return (
+    <>
+    
+    <Head>
+    <title>Photos</title>
+    <meta name='keywords' content='nextjs' />
+            </Head>
+   
     <div>
       <h1>Photos</h1>
 
@@ -25,5 +33,6 @@ export default function Photos({ photo }) {
         </Link>
       ))}
     </div>
+    </>
   );
 };

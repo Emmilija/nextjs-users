@@ -6,7 +6,7 @@ const About = () => {
   return (
 <>
     <Head>
-    <title>About Page</title>
+    <title>About</title>
     <meta name='keywords' content='nextjs' />
             </Head>
 

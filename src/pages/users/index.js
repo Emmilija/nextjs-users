@@ -1,6 +1,6 @@
 import styles from '@/styles/Users.module.css'
 import Link from 'next/link'
-
+import Head from 'next/head'
 
 //to tell how many pages it needs to create based on data
 export const getStaticProps = async () => {
@@ -18,6 +18,11 @@ return {
 
 export default function Users({users}) {
     return (
+    <>
+        <Head>
+        <title>Users</title>
+        <meta name='keywords' content='nextjs' />
+                </Head>
         <div>
             <h1>Users</h1>
 
@@ -32,5 +37,6 @@ export default function Users({users}) {
                 
                 )}
         </div>
+        </>
     )
 } 

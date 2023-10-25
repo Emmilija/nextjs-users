@@ -1,4 +1,6 @@
 import styles from '@/styles/Users.module.css'
+import Link from 'next/link'
+
 
 export const getStaticPaths = async () => {
 const response = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -16,8 +18,8 @@ return {
 }
 }
 //for each page 
-export const getStaticProps = async (context) => {
-const id = context.params.id
+export const getStaticProps = async ({params}) => {
+const id = params.id
 const response = await fetch('https://jsonplaceholder.typicode.com/users/' + id)
 const data = await response.json()
 
@@ -29,7 +31,11 @@ return{
 
 const Details = ({users}) => {
     return(
+    
         <div className={styles.photocontainer}>
+                 <button  className={styles.button}>
+<Link href={'/users'}>Go Back</Link>
+            </button>
             <h1>{users.name}</h1>
             <p className={styles.users}>Username: {users.username}</p>
             <p className={styles.users}>Email: {users.email}</p>
